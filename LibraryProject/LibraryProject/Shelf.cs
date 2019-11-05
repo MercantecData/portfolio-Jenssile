@@ -6,7 +6,8 @@ namespace LibraryProject
 {
     class Shelf
     {
-        private List<Book> bookshelf = new List<Book>();
-                      
+        List<Book> bookshelf = new List<Book>();
+
+
     }
 }
