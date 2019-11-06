@@ -30,11 +30,8 @@ namespace LibraryProject
         public Book(bool home, string title, string autour)
         {
             this.home = home;
-            Console.WriteLine(home);
             Title = title ?? throw new ArgumentNullException(nameof(title));
-            Console.WriteLine(Title);
             Autour = autour ?? throw new ArgumentNullException(nameof(autour));
-            Console.WriteLine(Autour);
             if (home == false)
             {
                 Lenddate = DateTime.Today;

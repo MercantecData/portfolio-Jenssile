@@ -6,8 +6,13 @@ namespace LibraryProject
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book(true, "Godless", "Josephine Ottersen");
+            Shelf test = new Shelf();
             
+
+            foreach (var item in test.List1)
+            {
+                Console.WriteLine(item.Title);
+            }
         }
     }
 }
