@@ -32,5 +32,14 @@ namespace LibraryProject
             get { return custumerid; }
             set { custumerid = value; }
         }
+
+        public Person(bool hasbook, string name, int age, string gender, int custumerID)
+        {
+            this.hasbook = hasbook;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Age = age;
+            Gender = gender ?? throw new ArgumentNullException(nameof(gender));
+            CustumerID = custumerID;
+        }
     }
 }
