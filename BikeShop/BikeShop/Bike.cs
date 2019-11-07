@@ -16,12 +16,12 @@ namespace BikeShop
 
         public Bike(string bikemodle, Tires tire, string meterial, double hight, bool springs, string color, bool adult)
         {
-            this.bikemodle = bikemodle ?? throw new ArgumentNullException(nameof(bikemodle));
-            this.tire = tire ?? throw new ArgumentNullException(nameof(tire));
-            this.meterial = meterial ?? throw new ArgumentNullException(nameof(meterial));
+            this.bikemodle = bikemodle;
+            this.tire = tire;
+            this.meterial = meterial;
             this.hight = hight;
             this.springs = springs;
-            this.color = color ?? throw new ArgumentNullException(nameof(color));
+            this.color = color;
             this.adult = adult;
         }
     }
