@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    color: white;
 }
 
 body {
     font-size: 16px;
+    background-color: #1e2021;
 }
 
 ul {
@@ -11,7 +13,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #36393c;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
@@ -34,7 +36,7 @@ li a:hover {
 }
   
   .active {
-    background-color: rgb(173, 54, 54);
+    background-color: #862e2e;
 }
 
 .leftcolumn {
@@ -59,7 +61,7 @@ li a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     padding: 16px;
     text-align: center;
-    background-color: #e0e0e0;
+    background-color: #27292b;
 }
 
 .row:after {
