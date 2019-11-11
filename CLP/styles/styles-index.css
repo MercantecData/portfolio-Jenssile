@@ -67,6 +67,10 @@ li a:hover {
     clear: both;
 }
 
+.footer {
+    margin-top: 20%;
+}
+
 @media screen and (max-width: 600px) {
     .leftcolumn .middlecolumn .rightcolumn {
         width: 100%;
