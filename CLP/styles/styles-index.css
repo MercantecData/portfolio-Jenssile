@@ -1,7 +1,11 @@
-body {
-    font-size: 28px;
+* {
+    box-sizing: border-box;
 }
-  
+
+body {
+    font-size: 16px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -12,11 +16,11 @@ ul {
     position: sticky;
     top: 0;
 }
-  
+
 li {
     float: left;
 }
-  
+
 li a {
     display: block;
     color: white;
@@ -24,11 +28,47 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-  
+
 li a:hover {
     background-color: #111;
 }
   
   .active {
-    background-color: #4CAF50;
+    background-color: rgb(173, 54, 54);
 }
+
+.leftcolumn {
+    float: left;
+    width: 25%;
+}
+
+.middlecolumn {
+    float: left;
+    width: 48%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .leftcolumn .middlecolumn .rightcolumn {
+        width: 100%;
+    }
+} 
