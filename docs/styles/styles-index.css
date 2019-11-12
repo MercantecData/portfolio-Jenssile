@@ -63,7 +63,7 @@ li a:hover {
     background-color: #27292b;
 }
 
-button {
+.button {
     background-color: #862e2e;
     border: none;
     color: white;
