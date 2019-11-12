@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles-index.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="card">
+                <h1>this is just a headder.</h1>
+            </div>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="#java">java</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>Asignment</h2>
+                    <p> - Ændre teksten i en knap når der klikkes på den.
+                        <br>
+                        - Tilføje nye elementer til document.
+                        <br>
+                        - Fjerne elementer fra document.
+                        <br>
+                        - Oprette og tilføje en række elementer på baggrund af et array.
+                        <br>
+                        - Tilføj elementer på baggrund af et tekst-felt (ligesom en gæstebog).</p>
+                </div>
+            </div>
+            <div class="middlecolumn">
+                <div class="card">
+                    <h2>Main Content</h2>
+                    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>Side</h2>
+                    <button onclick="change();" value="this is some text." id="myButton1"></button>
+                    <br>
+                    <script>createP();</script>
+                    <br>
+                    <button onclick="removeP();"></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="card">
+                <h1>This is just a footer</h1>
+            </div>
+        </div>
+    </body>
+</html>
