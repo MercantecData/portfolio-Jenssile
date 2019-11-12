@@ -1,5 +1,5 @@
 function change(); {
-    document.getElementById("myButton1").value="That is the first one done.";
+    document.getElementById("myButton1").innerHTML="That is the first one done.";
 }
 
 function createP(); {
