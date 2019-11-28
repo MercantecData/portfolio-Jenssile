@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2019 at 11:40 AM
+-- Generation Time: Nov 28, 2019 at 12:06 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -21,6 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `online_shop`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteorder` (`orderID` INT(11))  BEGIN
+	DELETE FROM orders WHERE order_ID = orderID;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -75,6 +85,19 @@ INSERT INTO `orders` (`order_ID`, `user_ID`, `addres_ID`, `product_ID`) VALUES
 (2, 4, 4, 8),
 (3, 2, 2, 2),
 (4, 7, 7, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `order_overview`
+-- (See below for the actual view)
+--
+CREATE TABLE `order_overview` (
+`order_ID` int(11)
+,`first_name` varchar(200)
+,`product_name` varchar(200)
+,`addres` varchar(200)
+);
 
 -- --------------------------------------------------------
 
@@ -134,6 +157,15 @@ INSERT INTO `users` (`user_ID`, `username`, `first_name`, `last_name`) VALUES
 (8, 'name8', 'first8', 'second8'),
 (9, 'name9', 'first9', 'second9'),
 (10, 'name10', 'first10', 'second10');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `order_overview`
+--
+DROP TABLE IF EXISTS `order_overview`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `order_overview`  AS  select `orders`.`order_ID` AS `order_ID`,`users`.`first_name` AS `first_name`,`products`.`product_name` AS `product_name`,`addresses`.`addres` AS `addres` from (((`orders` join `users` on(`orders`.`user_ID` = `users`.`user_ID`)) join `products` on(`orders`.`product_ID` = `products`.`product_ID`)) join `addresses` on(`orders`.`addres_ID` = `addresses`.`addres_ID`)) ;
 
 --
 -- Indexes for dumped tables
