@@ -1,0 +1,8 @@
+the stored prosedeuer delete_employee takes an int that is the ID of an employee and delletes them.
+yes i am aware that this dose not work i have yet to set it to cascade on dellete, COMMING SOON^TM.
+
+im also aware that the primary key called department_ID is redundant right now i will fix this at some point to.
+
+the view employeess is for seeing the employee ID with the full title.
+
+SEE relation diagram to understan how the DB is setup.

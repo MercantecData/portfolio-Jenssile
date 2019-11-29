@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2019 at 09:30 AM
+-- Generation Time: Nov 29, 2019 at 11:16 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -21,6 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `department_system`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_employee` (IN `ID` INT(11))  BEGIN
+	DELETE FROM employee WHERE employee_ID = ID;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -269,6 +279,28 @@ INSERT INTO `employee` (`employee_ID`, `title_ID`, `NAME`, `addres`, `age`) VALU
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `employees`
+-- (See below for the actual view)
+--
+CREATE TABLE `employees` (
+`employee_ID` int(11)
+,`title_ID` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `employeess`
+-- (See below for the actual view)
+--
+CREATE TABLE `employeess` (
+`employee_ID` int(11)
+,`title_name` varchar(200)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `salaries`
 --
 
@@ -403,6 +435,24 @@ INSERT INTO `titles` (`title_ID`, `salary_ID`, `title_name`, `title_dis`) VALUES
 (48, 18, 'Nunc PC', 'Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede'),
 (49, 39, 'Lectus Pede Corp.', 'velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam vitae diam. Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula'),
 (50, 32, 'Sollicitudin Ltd', 'erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `employees`
+--
+DROP TABLE IF EXISTS `employees`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `employees`  AS  select `employee`.`employee_ID` AS `employee_ID`,`titles`.`title_ID` AS `title_ID` from (`employee` join `titles` on(`employee`.`employee_ID` = `titles`.`title_ID`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `employeess`
+--
+DROP TABLE IF EXISTS `employeess`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `employeess`  AS  select `employee`.`employee_ID` AS `employee_ID`,`titles`.`title_name` AS `title_name` from (`employee` join `titles` on(`employee`.`employee_ID` = `titles`.`title_ID`)) ;
 
 --
 -- Indexes for dumped tables
