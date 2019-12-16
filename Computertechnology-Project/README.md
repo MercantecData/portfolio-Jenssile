@@ -1,4 +1,4 @@
-#Project for final week of school.
+# Project for final week of school.
 
 this wll be updated as i go.
 
