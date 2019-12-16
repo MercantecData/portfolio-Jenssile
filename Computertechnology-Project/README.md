@@ -4,8 +4,20 @@ this wll be updated as i go.
 
 ## Milestone 1
 
-Create database diagram.
+[x] Create database diagram.
 
 ## Milestone 2
 
-webpage.
+[] webpage.
+
+## Milestone 3
+
+[] Database.
+
+## Milestone 4
+
+[] Database integration.
+
+## Milestone 5
+
+[] Login system.
