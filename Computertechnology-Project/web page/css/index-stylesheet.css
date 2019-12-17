@@ -6,13 +6,14 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     padding: 10px;
-    background: #222425;
+    background: #161718;
 }
 
 .header {
     padding: 30px;
     text-align: center;
     background: #1E2021;
+    margin-bottom: 10px;
 }
 
 ul {
@@ -21,7 +22,8 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #1E2021;
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
     top: 0;
     width: 100%;
 }
@@ -43,18 +45,21 @@ li a {
 }
 
 .rightcolumn {
+    margin-top: 10px;
     float: left;
     width: 25%;
     padding: 0 10px;
 }
 
 .middlecolumn {
+    margin-top: 10px;
     float: left;
     width: 37.5%;
     padding: 0 10px;
 }
 
 .leftcolumn {
+    margin-top: 10px;
     float: left;
     width: 37.5%;
     padding: 0 10px;
@@ -73,8 +78,9 @@ li a {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
-    text-align: center;
-    background-color: #1E2021;
+    text-align: left;
+    background-color: rgb(34, 36, 37);
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 600px) {
