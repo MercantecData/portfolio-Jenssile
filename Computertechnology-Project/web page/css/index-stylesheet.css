@@ -42,6 +42,45 @@ li a {
     background: #AC1D42;
 }
 
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+.middlecolumn {
+    float: left;
+    width: 37.5%;
+    padding: 0 10px;
+}
+
+.leftcolumn {
+    float: left;
+    width: 37.5%;
+    padding: 0 10px;
+}
+
+.row {
+    margin: 0 -5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .card {
-    background: #1E2021;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #1E2021;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
 }
