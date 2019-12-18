@@ -2,6 +2,8 @@
 
 this is where you can find the code that i have used to create the database and tables.
 
+> The sql file called accounting is the export of the database.
+
 ## Setup of databases code
 
 ~~~~mysql
