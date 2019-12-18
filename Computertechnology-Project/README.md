@@ -8,11 +8,11 @@ this wll be updated as i go.
 
 ## Milestone 2
 
-- [ ] webpage.
+- [ ] webpage. WIP
 
 ## Milestone 3
 
-- [ ] Database.
+- [x] Database.
 
 ## Milestone 4
 
