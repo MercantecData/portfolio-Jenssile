@@ -5,7 +5,7 @@ this is where you can find the code that i have used to create the database and 
 ## Setup of databases code
 
 ~~~~mysql
-    CREATE DATABASE accounting;
+CREATE DATABASE accounting;
 ~~~~
 
 ## Setup of table code
