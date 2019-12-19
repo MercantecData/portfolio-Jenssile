@@ -171,3 +171,26 @@ CREATE TABLE household(
     FOREIGN KEY(IID) REFERENCES insurance(IID)
 );
 ~~~
+
+---
+
+> Added cascade to the tables.
+
+~~~mysql
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_1`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_1` FOREIGN KEY (`RID`) REFERENCES `rent`(`RID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_2`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_2` FOREIGN KEY (`TID`) REFERENCES `transport`(`TID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_3`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_3` FOREIGN KEY (`MeID`) REFERENCES `media`(`MeID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_4`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_4` FOREIGN KEY (`SID`) REFERENCES `subscriptions`(`SID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_5`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_5` FOREIGN KEY (`GrID`) REFERENCES `grocerys`(`GrID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_6`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_6` FOREIGN KEY (`GiID`) REFERENCES `gifts`(`GiID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_7`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_7` FOREIGN KEY (`VID`) REFERENCES `vacation`(`VID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `household` DROP FOREIGN KEY `household_ibfk_8`;
+ALTER TABLE `household` ADD CONSTRAINT `household_ibfk_8` FOREIGN KEY (`IID`) REFERENCES `insurance`(`IID`) ON DELETE CASCADE ON UPDATE CASCADE;
+~~~
