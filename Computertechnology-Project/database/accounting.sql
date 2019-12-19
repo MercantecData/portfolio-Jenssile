@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2019 at 10:25 AM
+-- Generation Time: Dec 19, 2019 at 10:44 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -185,14 +185,14 @@ ALTER TABLE `grocerys`
 --
 ALTER TABLE `household`
   ADD PRIMARY KEY (`HID`),
-  ADD KEY `RID` (`RID`),
-  ADD KEY `TID` (`TID`),
-  ADD KEY `MeID` (`MeID`),
-  ADD KEY `SID` (`SID`),
-  ADD KEY `GrID` (`GrID`),
-  ADD KEY `GiID` (`GiID`),
-  ADD KEY `VID` (`VID`),
-  ADD KEY `IID` (`IID`);
+  ADD KEY `household_ibfk_1` (`RID`),
+  ADD KEY `household_ibfk_2` (`TID`),
+  ADD KEY `household_ibfk_3` (`MeID`),
+  ADD KEY `household_ibfk_4` (`SID`),
+  ADD KEY `household_ibfk_5` (`GrID`),
+  ADD KEY `household_ibfk_6` (`GiID`),
+  ADD KEY `household_ibfk_7` (`VID`),
+  ADD KEY `household_ibfk_8` (`IID`);
 
 --
 -- Indexes for table `insurance`
@@ -246,7 +246,7 @@ ALTER TABLE `vacation`
 -- AUTO_INCREMENT for table `gifts`
 --
 ALTER TABLE `gifts`
-  MODIFY `GiID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `GiID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `grocerys`
@@ -310,14 +310,14 @@ ALTER TABLE `vacation`
 -- Constraints for table `household`
 --
 ALTER TABLE `household`
-  ADD CONSTRAINT `household_ibfk_1` FOREIGN KEY (`RID`) REFERENCES `rent` (`RID`),
-  ADD CONSTRAINT `household_ibfk_2` FOREIGN KEY (`TID`) REFERENCES `transport` (`TID`),
-  ADD CONSTRAINT `household_ibfk_3` FOREIGN KEY (`MeID`) REFERENCES `media` (`MeID`),
-  ADD CONSTRAINT `household_ibfk_4` FOREIGN KEY (`SID`) REFERENCES `subscriptions` (`SID`),
-  ADD CONSTRAINT `household_ibfk_5` FOREIGN KEY (`GrID`) REFERENCES `grocerys` (`GrID`),
-  ADD CONSTRAINT `household_ibfk_6` FOREIGN KEY (`GiID`) REFERENCES `gifts` (`GiID`),
-  ADD CONSTRAINT `household_ibfk_7` FOREIGN KEY (`VID`) REFERENCES `vacation` (`VID`),
-  ADD CONSTRAINT `household_ibfk_8` FOREIGN KEY (`IID`) REFERENCES `insurance` (`IID`);
+  ADD CONSTRAINT `household_ibfk_1` FOREIGN KEY (`RID`) REFERENCES `rent` (`RID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_2` FOREIGN KEY (`TID`) REFERENCES `transport` (`TID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_3` FOREIGN KEY (`MeID`) REFERENCES `media` (`MeID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_4` FOREIGN KEY (`SID`) REFERENCES `subscriptions` (`SID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_5` FOREIGN KEY (`GrID`) REFERENCES `grocerys` (`GrID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_6` FOREIGN KEY (`GiID`) REFERENCES `gifts` (`GiID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_7` FOREIGN KEY (`VID`) REFERENCES `vacation` (`VID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `household_ibfk_8` FOREIGN KEY (`IID`) REFERENCES `insurance` (`IID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `maintenance`
