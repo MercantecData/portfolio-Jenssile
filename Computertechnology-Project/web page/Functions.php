@@ -15,17 +15,17 @@ function CloseCon($conn) {
     $conn -> close();
 }
 
-function GetTable($table) {
+function GetGiftTable() {
     global $conn;
     
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT * FROM gifts";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "<table><tr><th>ID</th><th>Name</th></tr>";
+        echo "<table><tr><th>GiID</th><th>Buget</th><th>Money Spent</th><th>Number of People</th></tr>";
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "<tr><td>".$row["GiID"]."</td><td>".$row["price_buget"]." ".$row["money_spent"]."</td></tr>";
+            echo "<tr><td>".$row["GiID"]."</td><td>".$row["price_buget"]."</td><td>".$row["money_spent"]."</td><td>".$row["number_people"]."</td></tr>";
         }
         echo "</table>";
     } else {
