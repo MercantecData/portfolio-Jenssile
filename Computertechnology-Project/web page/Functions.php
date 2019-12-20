@@ -33,6 +33,24 @@ function GetGiftTable() {
     }
 }
 
+function GetMediaTable() {
+    global $conn;
+
+    $sql = "SELECT * FROM media";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo "<table><tr><th>MeID</th><th>Name</th><th>Monthly Price</th><th>Yearly Price</th></tr>";
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "<tr><td>".$row["MeID"]."</td><td>".$row["NAME"]."</td><td>".$row["price_monthly"]."</td><td>".$row["price_yearly"]."</td></tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "0 results";
+    }
+}
+
 function InsertGifts($buget, $people, $spent) {
     global $conn;
 
